@@ -20,12 +20,6 @@ public class SequenceEditorWindow : EditorWindow
 
     private List<Type> MarkedTypes = new List<Type>();
 
-    [MenuItem("Tools/Sequence Editor")]
-    private static void OpenWindow()
-    {
-        GetWindow<SequenceEditorWindow>("Sequence Editor");
-    }
-
     public static void OpenSequence(SequenceAsset sequence)
     {
         var window = GetWindow<SequenceEditorWindow>("Sequence Editor");
