@@ -750,7 +750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7238732777247291711, guid: 23e5163eb67169b4b8d9c4fa996d62f4, type: 3}
       propertyPath: m_Name
-      value: SequenceTriggerPrefab
+      value: SequenceTrigger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

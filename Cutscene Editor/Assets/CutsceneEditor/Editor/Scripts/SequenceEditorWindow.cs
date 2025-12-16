@@ -38,11 +38,9 @@ public class SequenceEditorWindow : EditorWindow
             .GetAssemblies()
             .SelectMany(a => a.GetTypes());
 
-        //Find classes which have JSONConvertable attribute and are serializable
-        MarkedTypes = allTypes
-            .Where(t =>
-                t.IsClass && t.IsSerializable &&
-                t.GetCustomAttribute<SequenceNodeAttribute>() != null)
+        //Find classes which have JSONConvertable attribute and are serializable        
+        MarkedTypes = TypeCache.GetTypesWithAttribute<SequenceNodeAttribute>().Where(t =>
+                t.IsClass && t.IsSerializable && t != typeof(RootNode))
             .OrderBy(t => t.Name)
             .ToList();
     }
