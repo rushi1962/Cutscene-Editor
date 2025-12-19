@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(TriggerSequence))]
-public class TriggerSequenceEditor : Editor
+public class TriggerSequenceInspector : Editor
 {
     public override void OnInspectorGUI()
     {
