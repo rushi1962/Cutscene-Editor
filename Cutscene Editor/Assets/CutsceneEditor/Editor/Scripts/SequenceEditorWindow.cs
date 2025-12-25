@@ -45,6 +45,13 @@ public class SequenceEditorWindow : EditorWindow
             .ToList();
     }
 
+    private void SaveSequenceChanges()
+    {
+        EditorUtility.SetDirty(currentSequence);
+        AssetDatabase.SaveAssets();
+        bHasMadeChanges = false;
+    }
+
 
     private void OnGUI()
     {
@@ -57,9 +64,6 @@ public class SequenceEditorWindow : EditorWindow
         //Add '*' to the name if changes have been made to the file
         string label = bHasMadeChanges ? currentSequence.name + "*" : currentSequence.name;
         EditorGUILayout.LabelField(label, EditorStyles.boldLabel);
-
-        //Sequence asset being worked on
-        EditorGUILayout.ObjectField("Asset", currentSequence, typeof(SequenceAsset), false);
 
         mousePosition = Event.current.mousePosition;
 
@@ -296,9 +300,7 @@ public class SequenceEditorWindow : EditorWindow
 
         if (e.type == EventType.KeyDown && e.control && e.keyCode == KeyCode.S)
         {
-            EditorUtility.SetDirty(currentSequence);
-            AssetDatabase.SaveAssets();
-            bHasMadeChanges = false;
+            SaveSequenceChanges();
         }
     }
 
@@ -362,6 +364,7 @@ public class SequenceEditorWindow : EditorWindow
 
         return false;
     }
+
     #endregion
 
     #region Deletes
@@ -405,5 +408,10 @@ public class SequenceEditorWindow : EditorWindow
         bHasMadeChanges = true;
     }
     #endregion
+
+    private void OnDisable()
+    {
+        SaveSequenceChanges();
+    }
 }
 
