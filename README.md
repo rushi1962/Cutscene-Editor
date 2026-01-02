@@ -109,7 +109,7 @@ Designer-Friendly Tools
 
 - Auto-save behavior (Unity editor limitation aware)
 
-Glimps At The Tool Inside Unity
+👀 Glimps At The Tool Inside Unity
 =
 ![WhatsApp Image 2026-01-01 at 15 31 22](https://github.com/user-attachments/assets/c912f4c8-2def-4ab9-8b27-77b3e179a10a)
 
