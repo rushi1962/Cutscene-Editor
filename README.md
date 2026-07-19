@@ -196,7 +196,7 @@ This project was built to:
 
 Rushikesh Charapale
 
-Senior Gameplay / Tools Developer
+Gameplay / Tools Developer
 
 🔗 GitHub: <[rushi1962](https://github.com/rushi1962)>
 
